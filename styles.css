@@ -10,6 +10,11 @@
     flex-direction: column;
     flex-wrap: wrap;
     min-height: 100vh;
-    min-width: 100vw;
+    min-width: 100vh;
     font-family: "Epilogue", sans-serif;
+} 
+
+.title {
+    font-size: 30px;
+    margin-bottom: 30px;
 }
