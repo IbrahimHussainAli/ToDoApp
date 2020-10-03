@@ -41,9 +41,18 @@ function addTodo(event){
 function deleteCheck(e){
     const item = e.target;
     //Delete todo item
-    if (e.target.classList[0] === 'trash-btn'){
+    if (item.classList[0] === 'trash-btn'){
         const todo = item.parentElement;
         todo.remove();
+    }
+
+    //check item
+    if (item.classList[0] === 'complete-btn'){
+        const todo = item.parentElement;
+        todo.classList.toggle('completed');
+        const completeButton = todo.querySelector('.complete-btn');
+        completeButton.innerHTML = "";
+        completeButton.innerHTML = '<i class="fas fa-check-circle"></i>';
     }
 }
 
