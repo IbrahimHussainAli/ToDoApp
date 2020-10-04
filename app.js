@@ -51,8 +51,12 @@ function deleteCheck(e){
         const todo = item.parentElement;
         todo.classList.toggle('completed');
         const completeButton = todo.querySelector('.complete-btn');
+        if (todo.classList[1] === 'completed'){
         completeButton.innerHTML = "";
         completeButton.innerHTML = '<i class="fas fa-check-circle"></i>';
+        } else {
+            completeButton.innerHTML = '<i class="far fa-check-circle"></i>';
+        }
     }
 }
 
