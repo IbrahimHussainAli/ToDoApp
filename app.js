@@ -99,25 +99,25 @@ function filterTodo(e) {
     });
 }
 
-function saveLocalTodos(todo){
-    //check if there are any todos
+function checkCurrentTodos(){
     let todos;
     if(localStorage.getItem('todos') === null){
         todos = [];
     } else {
         todos = JSON.parse(localStorage.getItem('todos'));
-    }
+    };
+    return todos;
+};
+
+function saveLocalTodos(todo){
+    //check if there are any todos
+    let todos = checkCurrentTodos();
     todos.push(todo);
     localStorage.setItem('todos', JSON.stringify(todos));
 }
 
 function getTodos(){
-    let todos;
-    if(localStorage.getItem('todos') === null){
-        todos = [];
-    } else {
-        todos = JSON.parse(localStorage.getItem('todos'));
-    }
+    let todos = checkCurrentTodos();
     todos.forEach(function(todo){
     //Todo Div
         const todoDiv = document.createElement('div');
@@ -147,7 +147,7 @@ function getTodos(){
     //append to list
         todoList.appendChild(todoDiv);
     })
-}
+} 
 
 // get date
 let dateOption = { weekday: 'long', month: 'short', day:'numeric'};
