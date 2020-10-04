@@ -55,6 +55,7 @@ function deleteCheck(e){
         const todo = item.parentElement;
         //animation
         todo.classList.add('fall');
+        removeLocalTodos(todo);
         todo.addEventListener('transitionend', function(){
             todo.remove();
         });
@@ -148,6 +149,13 @@ function getTodos(){
         todoList.appendChild(todoDiv);
     })
 } 
+
+function removeLocalTodos(todo){
+    let todos = checkCurrentTodos();
+    let todoIndex = todos.indexOf(todo.children[0].innerText);
+    todos.splice(todoIndex, 1);
+    localStorage.setItem('todos', JSON.stringify(todos));
+}
 
 // get date
 let dateOption = { weekday: 'long', month: 'short', day:'numeric'};
