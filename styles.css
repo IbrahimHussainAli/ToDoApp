@@ -35,8 +35,7 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 400px;
-    background-color: white;
+    min-width: 500px;
 }
 
 form input {
@@ -117,4 +116,30 @@ form button:hover {
 .fall {
     transform: translateY(8rem);
     opacity: 0;
+} 
+
+select {
+    appearance: none;
+    outline: none;
+} 
+
+.select {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+} 
+
+select {
+    width: 9rem;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.select::after {
+    content: "\25BC";
+    position: absolute;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+    padding: 1rem;
 }
