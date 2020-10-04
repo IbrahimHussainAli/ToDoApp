@@ -96,6 +96,7 @@ form button:hover {
     padding: 1rem;
     font-size: 1rem;
     cursor: pointer;
+    
 } 
 
 .trash-btn:hover, .complete-btn:hover{
@@ -105,4 +106,9 @@ form button:hover {
 
 .fa-check-circle, .fa-trash{
     pointer-events: none;
+} 
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
 }
