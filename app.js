@@ -28,7 +28,9 @@ function addTodo(event){
         return;
     };
     //put the li into todo Div
-    todoDiv.appendChild(newTodo); 
+    todoDiv.appendChild(newTodo);
+    //add todo to localstorage
+    saveLocalTodos(todoInput.value);
     //check mark button
     const completedButton = document.createElement('button');
     completedButton.innerHTML = '<i class="far fa-check-circle"></i>';
@@ -96,7 +98,17 @@ function filterTodo(e) {
     });
 }
 
-//function saveLocalTodos(todo)
+function saveLocalTodos(todo){
+    //check if there are any todos
+    let todos;
+    if(localStorage.getItem('todos') === null){
+        todos = [];
+    } else {
+        todos = JSON.parse(localStorage.getItem('todos'));
+    }
+    todos.push(todo);
+    localStorage.setItem('todos', JSON.stringify(todos));
+}
 
 // get date
 let dateOption = { weekday: 'long', month: 'short', day:'numeric'};
