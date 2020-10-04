@@ -21,7 +21,12 @@ function addTodo(event){
     //Create Li
     const newTodo = document.createElement('li');
     newTodo.innerText = todoInput.value;
+    if (newTodo.innerText != ""){
     newTodo.classList.add('todo-item');
+    } else {
+        alert("Please enter a Todo");
+        return;
+    };
     //put the li into todo Div
     todoDiv.appendChild(newTodo); 
     //check mark button
@@ -79,9 +84,19 @@ function filterTodo(e) {
                 } else {
                     todo.style.display = "none";
                 }
+                break;
+            case "uncompleted":
+                if (!todo.classList.contains('completed')){
+                    todo.style.display = 'flex';
+                } else {
+                    todo.style.display = 'none';
+                }
+                break;
         }
     });
 }
+
+//function saveLocalTodos(todo)
 
 // get date
 let dateOption = { weekday: 'long', month: 'short', day:'numeric'};
