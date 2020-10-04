@@ -59,6 +59,7 @@ form button {
 form button:hover {
     background: black;
     color: white;
+    transition: all 0.3 ease;
 } 
 
 .todo-container{
@@ -131,7 +132,7 @@ select {
 } 
 
 select {
-    width: 9rem;
+    width: 10rem;
     cursor: pointer;
     padding: 1rem;
 }
@@ -143,4 +144,12 @@ select {
     right: 0;
     pointer-events: none;
     padding: 1rem;
-}
+    transition: all 0.3s ease;
+} 
+
+.select:hover::after{
+    background: black;
+    color: white;
+    transition: all 0.3 ease;
+} 
+
