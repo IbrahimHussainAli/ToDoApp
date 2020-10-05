@@ -8,6 +8,7 @@ const userName = document.querySelector('.userName');
 
 //Event listeners
 document.addEventListener('DOMContentLoaded', getTodos);
+document.addEventListener('DOMContentLoaded', getName);
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteCheck);
 filterOption.addEventListener('change', filterTodo);
@@ -175,12 +176,20 @@ function addNameToLocal(e){
         let name = userName.innerText;
         localStorage.setItem('name', name);
     } else {
-    console.log(e.target);
     e.preventDefault();
     userName.innerText = localStorage.getItem('name');
 }
     }
 }
+
+function getName(){
+    if (localStorage.getItem('name') === null){
+        userName.innerText = 'User'
+    } else {
+        userName.innerText = localStorage.getItem('name');
+    }
+}
+
 // get date
 let dateOption = { weekday: 'long', month: 'short', day:'numeric'};
 let today = new Date();
