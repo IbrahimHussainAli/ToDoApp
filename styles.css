@@ -40,6 +40,7 @@ form {
 
 form input {
     flex: 1;
+    outline: none;
 }
 
 form input,
@@ -153,3 +154,13 @@ select {
     transition: all 0.3 ease;
 } 
 
+.userName{
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+}
+
+.editing{
+    text-decoration: underline;
+    text-decoration-color: white ;
+}

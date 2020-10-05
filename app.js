@@ -4,12 +4,21 @@ const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
 const dateElement = document.getElementById('date');
 const filterOption = document.querySelector('.filter-todos');
+const userName = document.querySelector('.userName');
 
 //Event listeners
 document.addEventListener('DOMContentLoaded', getTodos);
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteCheck);
 filterOption.addEventListener('change', filterTodo);
+userName.addEventListener('focus', function(){
+    userName.classList.add('editing'); 
+});
+userName.addEventListener('blur', function(){
+    userName.classList.remove('editing');
+});
+userName.addEventListener('blur', addNameToLocal);
+userName.addEventListener('keypress', addNameToLocal);
 
 //Functions 
 function addTodo(event){
@@ -157,6 +166,21 @@ function removeLocalTodos(todo){
     localStorage.setItem('todos', JSON.stringify(todos));
 }
 
+function addNameToLocal(e){
+    //check if press enter or focus away (blur)
+    if (e.keyCode === 13 || e.type === 'blur'){
+    e.preventDefault();
+    //check if field is empty
+    if(!userName.innerText == ""){
+        let name = userName.innerText;
+        localStorage.setItem('name', name);
+    } else {
+    console.log(e.target);
+    e.preventDefault();
+    userName.innerText = localStorage.getItem('name');
+}
+    }
+}
 // get date
 let dateOption = { weekday: 'long', month: 'short', day:'numeric'};
 let today = new Date();
