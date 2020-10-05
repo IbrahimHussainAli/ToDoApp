@@ -194,3 +194,13 @@ function getName(){
 let dateOption = { weekday: 'long', month: 'short', day:'numeric'};
 let today = new Date();
 dateElement.innerHTML = today.toLocaleDateString("en-GB", dateOption);
+
+// get time
+let now = new Date();
+let hours = now.getHours;
+let ft = now.toLocaleString("en-gb", {
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: true
+});
+document.getElementById('time').innerHTML = ft;
