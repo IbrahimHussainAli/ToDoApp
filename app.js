@@ -208,20 +208,20 @@ document.getElementById('time').innerHTML = ft;
 
 // change the background image and title greeting with time
 if ( hours < 5){
-    greetingTime.innerText = 'Evening';
+    greetingTime.innerText = 'evening';
     document.body.style.backgroundImage = "url('images/evening.jpeg')";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
 } 
 else if (hours < 17) {
-    greetingTime.innerText = 'Day';
+    greetingTime.innerText = 'day';
     document.body.style.backgroundImage = "url('images/day.jpeg')";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
     
 } 
 else if (hours < 12){
-    greetingTime.innerText = 'Morning';
+    greetingTime.innerText = 'morning';
     document.body.style.backgroundImage = "url('images/morning.jpeg')";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
