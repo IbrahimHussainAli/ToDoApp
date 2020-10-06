@@ -10,6 +10,7 @@ const greetingTime = document.querySelector('.greeting');
 //Event listeners
 document.addEventListener('DOMContentLoaded', getTodos);
 document.addEventListener('DOMContentLoaded', getName);
+document.addEventListener('DOMContentLoaded', getTime);
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteCheck);
 filterOption.addEventListener('change', filterTodo);
@@ -197,16 +198,27 @@ let today = new Date();
 dateElement.innerHTML = today.toLocaleDateString("en-GB", dateOption);
 
 // get time
-let now = new Date();
-let hours = now.getHours();
-let ft = now.toLocaleString("en-gb", {
-    hour: 'numeric',
-    minute: 'numeric',
-    hour12: true
-});
-document.getElementById('time').innerHTML = ft; 
+function getTime(){
+    let today = new Date();
+    let h = today.getHours();
+    let m = today.getMinutes();
+    hours = addZero(hours);
+    m = addZero(m);
+    document.getElementById('time').innerHTML = h + ':' + m;
+    let t = setTimeout(function(){ getTime() }, 1000);
+};
+
+//add zero in fron of numbers below 10
+function addZero(n){
+    if (n<10){
+        n = "0" + n;
+    }
+    return n;
+}
 
 // change the background image and title greeting with time
+let now = new Date();
+let hours = now.getHours();
 if ( hours < 5){
     greetingTime.innerText = 'evening';
     document.body.style.backgroundImage = "url('images/evening.jpeg')";
