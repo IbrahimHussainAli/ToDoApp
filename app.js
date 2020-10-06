@@ -219,7 +219,7 @@ function addZero(n){
 // change the background image and title greeting with time
 let now = new Date();
 let hours = now.getHours();
-if ( hours < 5){
+if ( hours >= 17 || hours < 5){
     greetingTime.innerText = 'evening';
     document.body.style.backgroundImage = "url('images/evening.jpeg')";
 } 
@@ -231,3 +231,4 @@ else if (hours < 12){
     greetingTime.innerText = 'morning';
     document.body.style.backgroundImage = "url('images/morning.jpeg')";
 };
+
