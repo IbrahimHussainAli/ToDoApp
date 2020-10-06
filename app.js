@@ -222,19 +222,12 @@ let hours = now.getHours();
 if ( hours < 5){
     greetingTime.innerText = 'evening';
     document.body.style.backgroundImage = "url('images/evening.jpeg')";
-    document.body.style.backgroundRepeat = "no-repeat";
-    document.body.style.backgroundSize = "cover";
 } 
 else if (hours < 17) {
     greetingTime.innerText = 'day';
     document.body.style.backgroundImage = "url('images/day.jpeg')";
-    document.body.style.backgroundRepeat = "no-repeat";
-    document.body.style.backgroundSize = "cover";
-    
 } 
 else if (hours < 12){
     greetingTime.innerText = 'morning';
     document.body.style.backgroundImage = "url('images/morning.jpeg')";
-    document.body.style.backgroundRepeat = "no-repeat";
-    document.body.style.backgroundSize = "cover";
 };

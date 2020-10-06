@@ -2,6 +2,16 @@
     margin: 0 auto;
 } 
 
+body{
+    background: no-repeat center center fixed;
+    background-size : cover;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+
 header {
     display: flex;
     flex-direction: column;
@@ -19,7 +29,7 @@ header {
     flex-direction: column;
     flex-wrap: nowrap;
     min-height: 300px;
-    width: 900px;
+    width: 750px;
     font-family: "Epilogue", sans-serif;
 } 
 
