@@ -5,6 +5,7 @@ const todoList = document.querySelector('.todo-list');
 const dateElement = document.getElementById('date');
 const filterOption = document.querySelector('.filter-todos');
 const userName = document.querySelector('.userName');
+const greetingTime = document.querySelector('.greeting');
 
 //Event listeners
 document.addEventListener('DOMContentLoaded', getTodos);
@@ -197,10 +198,25 @@ dateElement.innerHTML = today.toLocaleDateString("en-GB", dateOption);
 
 // get time
 let now = new Date();
-let hours = now.getHours;
+let hours = now.getHours();
 let ft = now.toLocaleString("en-gb", {
     hour: 'numeric',
     minute: 'numeric',
     hour12: true
 });
-document.getElementById('time').innerHTML = ft;
+document.getElementById('time').innerHTML = ft; 
+
+// change the background image and title greeting with time
+if ( hours < 5){
+    greetingTime.innerText = 'Evening';
+    document.body.style.backgroundImage = "url('images/evening.jpeg')";
+} 
+else if (hours < 17) {
+    greetingTime.innerText = 'Day';
+    document.body.style.backgroundImage = "url('images/day.jpeg')";
+    
+} 
+else if (hours < 12){
+    greetingTime.innerText = 'Morning';
+    document.body.style.backgroundImage = "url('images/morning.jpeg')";
+};
